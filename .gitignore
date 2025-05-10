@@ -1,0 +1,22 @@
+# Byte-compiled / optimized
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual envs
+.venv/
+env/
+
+# Data & outputs
+data/
+outputs/
+
+# Model checkpoints
+*.pth
+*.safetensors
+
+# Logs and temp
+*.log
+
+# OS files
+.DS_Store

@@ -1,0 +1,5 @@
+torch
+torchvision
+timm
+albumentations
+git+https://github.com/ChristophReich1996/Involution
