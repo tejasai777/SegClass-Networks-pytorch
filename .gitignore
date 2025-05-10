@@ -9,7 +9,6 @@ env/
 
 # Data & outputs
 data/
-outputs/
 
 # Model checkpoints
 *.pth
