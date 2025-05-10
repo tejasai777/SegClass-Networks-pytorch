@@ -1,3 +1,8 @@
+'''
+- build_model function: 
+- maps the model class to train. 
+'''
+
 from models.dinpnet import DInPNet
 from models.efficientnetv2 import EfficientNetV2
 from models.mobilenetv3 import MobileNetV3

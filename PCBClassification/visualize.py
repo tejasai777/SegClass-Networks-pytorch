@@ -1,4 +1,4 @@
-# visualize.py
+# Saves loss and accuracy graghd from train history 
 
 import os
 import matplotlib.pyplot as plt
