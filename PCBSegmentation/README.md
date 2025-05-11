@@ -1,4 +1,4 @@
-# PCB Segmentation Project
+# PCB-Component-Segmentation-Networks-pytorch
 
 ## Structure
 ```
