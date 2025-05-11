@@ -3,6 +3,8 @@ from models.unetpp import NestedUNet
 from models.unet_vgg16 import vgg16bn_unet
 from models.attunet import AttU_Net
 from models.unet_mobilenet import UNet as MobileUNet
+from models.ResUnet import ResUnet
+from models.Unet import UNET
 
 def build_seg_model(name, img_ch=3, num_classes=4):
     n = name.lower()
@@ -16,5 +18,9 @@ def build_seg_model(name, img_ch=3, num_classes=4):
         return AttU_Net(img_ch=img_ch, output_ch=num_classes)
     elif n in ['unet_mobilenet', 'mobilenet']:
         return MobileUNet(n_channels=img_ch, num_classes=num_classes)
+    elif n in ['unet', 'UNET','Unet']:
+        return UNET(in_channels = 3, out_channels = num_classes)
+    elif n in ['resunet', 'ResUnet']:
+        return ResUnet(channel=3,out_channel=num_classes)
     else:
         raise ValueError(f"Unknown model: {name}")

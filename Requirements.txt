@@ -1,0 +1,9 @@
+torch
+torchvision
+timm
+albumentations
+segmentation-models-pytorch
+opencv-python
+matplotlib
+scikit-learn
+git+https://github.com/ChristophReich1996/Involution
