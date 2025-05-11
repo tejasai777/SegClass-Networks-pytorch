@@ -1,8 +1,8 @@
-#PCB-Component classification using DL models
-#E-WASTE RECYCLING IN SEMICONDUCTOR INDUSTRY
+# Modular Deep Learning Project
 
-## Project root Structure
+## Structure
 
+```
 project_root/
 ├── data/
 │   ├── train/
@@ -18,7 +18,8 @@ project_root/
 ├── train.py
 ├── visualize.py
 ├── requirements.txt
-└── README.txt
+└── README.md
+```
 
 Install dependencies:
 
