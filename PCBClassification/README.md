@@ -1,4 +1,4 @@
-# Modular Deep Learning Project
+# PCB-Component-Classification-Networks-pytorch
 
 ## Structure
 
