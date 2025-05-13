@@ -4,11 +4,11 @@
 
 | Model Name        | Sample Output                                                         |
 | ----------------- | ----------------------------------------------------------------------|
-| **DlnpNet**       | ![DlnpNet](PCBClassification\outputs\samples\DlnpNet.png)             |
-| **PCBClassNet**   | ![PCBClassNet](PCBClassification\outputs\samples\PCBClassNet.png)     |
-| **ConvNeXt Tiny** | ![ConvNeXt Tiny](PCBClassification\outputs\samples\convnext_tiny.png) |
-| **MobileNetV3**   | ![MobileNetV3](PCBClassification\outputs\samples\MobileNetv3.png)     |
-| **EfficientNet**  | ![EfficientNet](PCBClassification\outputs\samples\efficientnet.png)   |
+| **DlnpNet**       | ![DlnpNet](PCBClassification/outputs/samples/DlnpNet.png)             |
+| **PCBClassNet**   | ![PCBClassNet](PCBClassification/outputs/samples/PCBClassNet.png)     |
+| **ConvNeXt Tiny** | ![ConvNeXt Tiny](PCBClassification/outputs/samples/convnext_tiny.png) |
+| **MobileNetV3**   | ![MobileNetV3](PCBClassification/outputs/samples/MobileNetv3.png)     |
+| **EfficientNet**  | ![EfficientNet](PCBClassification/outputs/samples/efficientnet.png)   |
 
 
 # PCB-Component-Segmentation-Networks-PyTorch
