@@ -1,3 +1,11 @@
+"""
+Code credits:
+ -Paper:      Rethinking BiSeNet For Real-time Semantic Segmentation
+ -Url:        https://arxiv.org/abs/2104.13188v1
+ -github: Zh320- Real-time Semantic Segmentation in PyTorch- https://github.com/zh320/realtime-semantic-segmentation-pyt
+ -Date:       2023/07/29
+"""
+
 import torch
 import torch.nn as nn
 import torch.nn.functional as F

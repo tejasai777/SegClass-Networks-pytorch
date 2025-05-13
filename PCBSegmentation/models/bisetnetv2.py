@@ -1,3 +1,12 @@
+"""
+Code credits:
+  -Paper:      BiSeNet V2: Bilateral Network with Guided Aggregation for Real-time Semantic Segmentation
+  -Url:        https://arxiv.org/abs/2004.02147
+  -github: Zh320- Real-time Semantic Segmentation in PyTorch- https://github.com/zh320/realtime-semantic-segmentation-pyt
+  -Date:       2023/09/03
+"""
+
+
 import torch
 import torch.nn as nn
 import torch.nn.functional as F

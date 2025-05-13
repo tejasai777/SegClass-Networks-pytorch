@@ -1,3 +1,9 @@
+'''code credits:
+    - Zh320
+   - Real-time Semantic Segmentation in PyTorch
+   - GitHub Repository: https://github.com/zh320/realtime-semantic-segmentation-pyt
+'''
+
 model_hub = {}
 aux_models = []
 detail_head_models = []

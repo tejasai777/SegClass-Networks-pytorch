@@ -1,3 +1,9 @@
+'''code credits:
+    - Zh320
+   - Real-time Semantic Segmentation in PyTorch
+   - GitHub Repository: https://github.com/zh320/realtime-semantic-segmentation-pyt
+'''
+
 import torch.nn as nn
 
 

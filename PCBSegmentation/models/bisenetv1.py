@@ -1,8 +1,9 @@
 """
-Paper:      BiSeNet: Bilateral Segmentation Network for Real-time Semantic Segmentation
-Url:        https://arxiv.org/abs/1808.00897
-Create by:  zh320
-Date:       2023/09/03
+Code credits:
+  -Paper:      BiSeNet: Bilateral Segmentation Network for Real-time Semantic Segmentation
+  -Url:        https://arxiv.org/abs/1808.00897
+  -github: Zh320- Real-time Semantic Segmentation in PyTorch- https://github.com/zh320/realtime-semantic-segmentation-pyt
+  -Date:       2023/09/03
 """
 
 import torch

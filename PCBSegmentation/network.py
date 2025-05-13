@@ -6,12 +6,12 @@ from models.unet_mobilenet import UNet as MobileUNet
 from models.ResUnet import ResUnet
 from models.Unet import UNET
 import segmentation_models_pytorch as smp
-from models.segformer import BiSeNetMulticlass
+from models.bisetnetv2 import BiSeNetMulticlass
 from models.stdc import STDC
 from models.ddr import DDRNet
 from models.litehrnet import LiteHRNet
 
-
+# with signature for every model is initialised here 
 def build_seg_model(name, img_ch=3, num_classes=4, img_size=640):
     n = name.lower()
     if n == 'unet3plus':
@@ -32,8 +32,8 @@ def build_seg_model(name, img_ch=3, num_classes=4, img_size=640):
         return STDC(num_class=num_classes, n_channel=img_ch, use_aux=False, use_detail_head=False)
     elif n == 'ddrnet':
       return DDRNet(num_class=num_classes, n_channel=img_ch, arch_type='DDRNet-23-slim', use_aux=False)
-    elif n in ['litehrnet', 'lite-hrnet-30','litehrnet30']:
-      return LiteHRNet(num_class=num_classes, n_channel=img_ch, arch_type='litehrnet30')
+    # elif n in ['litehrnet', 'lite-hrnet-30','litehrnet30']:
+    #   return LiteHRNet(num_class=num_classes, n_channel=img_ch, arch_type='litehrnet30')
     elif n == 'deeplabv3plus_resnet34':
         return smp.DeepLabV3Plus(
             encoder_name="resnet34",

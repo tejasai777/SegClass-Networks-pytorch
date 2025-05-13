@@ -1,3 +1,15 @@
+"""
+Code Credits:
+
+1. UNet-MobileNet  
+   - UNet-MobileNet model implementation in PyTorch  
+   - GitHub Repository: https://github.com/YZY-stack/UNet-MobileNet-Pytorch/tree/main
+
+2. Pytorch-UNet  
+   - PyTorch UNet implementation for image segmentation  
+   - GitHub Repository: https://github.com/milesial/Pytorch-UNet
+"""
+
 import time
 
 import torch

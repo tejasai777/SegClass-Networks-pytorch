@@ -4,7 +4,7 @@ import torch
 import matplotlib.pyplot as plt
 from matplotlib.colors import ListedColormap
 
-# These must match your A.Normalize() settings
+# To  Unormalize test images
 MEAN = np.array([0.485, 0.456, 0.406])
 STD  = np.array([0.229, 0.224, 0.225])
 
@@ -21,11 +21,11 @@ def unnormalize(img_tensor):
 
 def plot_samples(model, loader, device, save_dir, num_samples=5):
     """
-    Saves examples with two rows of three panels each:
-      Top row:    Original | GT Mask    | Pred Mask
-      Bottom row: Original | GT Overlay | Pred Overlay
     Uses discrete class colormap consistent with class-wise plots, with background always black.
-    """
+ 
+    row 1:    Original | GT Mask    | Pred Mask
+    row 2: Original | GT Overlay | Pred Overlay
+   """
     os.makedirs(save_dir, exist_ok=True)
     model.eval()
     count = 0
@@ -50,12 +50,12 @@ def plot_samples(model, loader, device, save_dir, num_samples=5):
             colors[0] = (0, 0, 0, 1)
             cmap = ListedColormap(colors)
 
-            # Create overlays (mask out background)
+            # mask out background and check the segmnetaion on original images by overalying masks
             gt_overlay = np.ma.masked_where(gt == 0, gt)
             pred_overlay = np.ma.masked_where(preds == 0, preds)
 
             fig, axs = plt.subplots(2, 3, figsize=(18, 10))
-            # Top row: raw masks
+            # row 1 raw masks
             axs[0, 0].imshow(img)
             axs[0, 0].set_title("Original Image")
             axs[0, 0].axis("off")
@@ -68,7 +68,7 @@ def plot_samples(model, loader, device, save_dir, num_samples=5):
             axs[0, 2].set_title("Pred Mask")
             axs[0, 2].axis("off")
 
-            # Bottom row: overlays
+            # row 2 overlays
             axs[1, 0].imshow(img)
             axs[1, 0].set_title("Original Image")
             axs[1, 0].axis("off")

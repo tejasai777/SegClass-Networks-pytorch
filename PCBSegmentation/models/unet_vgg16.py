@@ -1,6 +1,14 @@
-# import sys
-# sys.path.append("/content/UNet-3-Plus-Pytorch/models")
-# from unet3plus import UNet3Plus
+"""
+Code Credits:
+1. Ronneberger et al., 2015
+   - U-Net: Convolutional Networks for Biomedical Image Segmentation
+   - Source: https://arxiv.org/abs/1505.04597
+
+2. zhoudaxia233-PyTorch-Unet
+  -Unet with VGG encoder (VGG13 with BatchNorm, VGG16 with BatchNorm ) 
+  -GitHub Repository: https://github.com/zhoudaxia233/PyTorch-Unet/blob/master/vgg_unet.py
+"""
+
 
 import torch
 import torch.nn as nn

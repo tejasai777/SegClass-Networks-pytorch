@@ -15,6 +15,7 @@ from segmentation_models_pytorch.losses import DiceLoss
 from visualize import plot_samples, save_plots, plot_classwise_curves
 from eval import evaluate_metrics
 
+# read load images and masks
 class PCBDataset(Dataset):
     def __init__(self, image_paths, mask_paths, transform=None):
         self.image_paths = image_paths
@@ -65,7 +66,7 @@ def eval_fn(loader, model, criterion, device):
             total_loss += loss.item()
     return total_loss / len(loader)
 
-
+# argparser  setup
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--model', type=str, required=True,
@@ -81,8 +82,7 @@ def main():
             'resunet',
             'bisenetmulticlass',
             'stdc',
-            'ddrnet',
-            'litehrnet'
+            'ddrnet'
         ])
     parser.add_argument('--data-dir', type=str, default='data')
     parser.add_argument('--output-dir', type=str, default='outputs')
@@ -93,6 +93,7 @@ def main():
     parser.add_argument('--patience', type=int, default=20)
     args = parser.parse_args()
 
+# load train and val data
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     train_imgs, train_masks = get_paths(os.path.join(args.data_dir,'train','images'),
                                         os.path.join(args.data_dir,'train','masks'))
@@ -105,9 +106,11 @@ def main():
     val_loader   = DataLoader(PCBDataset(val_imgs, val_masks,
                                          transform=get_val_transform(args.img_size)),
                               batch_size=1, shuffle=False, num_workers=2)
-
+    
     model = build_seg_model(args.model, img_ch=3, num_classes=4).to(device)
 
+
+# Hybrid Loss function (Weighted CCE + DICE loss)
     CLASS_WEIGHTS = torch.tensor([0.1, 0.8, 0.85, 0.9], dtype=torch.float32).to(device)
 
     ce = nn.CrossEntropyLoss(weight=CLASS_WEIGHTS)
@@ -118,18 +121,18 @@ def main():
 
     best_val = float('inf')
     no_improve = 0
-    train_losses, val_losses = [], []
-    classwise_dice, classwise_iou = [], []
+    train_losses, val_losses = [], [] # loss history training, validation
+    classwise_dice, classwise_iou = [], []  # loss history class wise
 
     for epoch in range(1, args.epochs + 1):
-        # Training
+        # Training block
         tr_loss = train_fn(train_loader, model, criterion, optimizer, device)
         vl_loss = eval_fn(val_loader, model, criterion, device)
         train_losses.append(tr_loss)
         val_losses.append(vl_loss)
         print(f"Epoch {epoch}/{args.epochs} - Train Loss: {tr_loss:.4f} | Val Loss: {vl_loss:.4f}")
 
-        # Save best and early stop
+        # Save best model from training and early stop if exceeds patience count
         out_dir = os.path.join(args.output_dir, args.model)
         os.makedirs(out_dir, exist_ok=True)
         if vl_loss < best_val:
@@ -143,12 +146,12 @@ def main():
                 print("⏹️ Early stopping.")
                 break
 
-        # Evaluate per-class metrics
+        # save per-class metrics
         metrics = evaluate_metrics(model, val_loader, device, num_classes=4)
         classwise_dice.append(metrics['dice_score'].tolist())
         classwise_iou.append(metrics['iou'].tolist())
 
-    # After training, save and plot class-wise curves
+    # to save and plot class-wise curves
     with open(os.path.join(out_dir, "classwise_dice.json"), "w") as f:
         json.dump(classwise_dice, f)
     with open(os.path.join(out_dir, "classwise_iou.json"), "w") as f:
@@ -156,10 +159,10 @@ def main():
     plot_classwise_curves(classwise_dice, classwise_iou, out_dir,
                           class_names=['BG', 'Cap', 'Res', 'IC'])
 
-    # Visualize first 5 samples
+    # show first 5 samples
     plot_samples(model, val_loader, device, os.path.join(out_dir, 'samples'), num_samples=5)
 
-    # Final evaluation metrics
+    # evaluation metrics
     final_metrics = evaluate_metrics(model, val_loader, device, num_classes=4)
     print("Evaluation Metrics:")
     for k, v in final_metrics.items():

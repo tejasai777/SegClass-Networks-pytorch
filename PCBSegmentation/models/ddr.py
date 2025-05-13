@@ -1,9 +1,10 @@
 """
-Paper:      Deep Dual-resolution Networks for Real-time and Accurate Semantic 
+Code credits:
+ -Paper:      Deep Dual-resolution Networks for Real-time and Accurate Semantic 
             Segmentation of Road Scenes
-Url:        https://arxiv.org/abs/2101.06085
-Create by:  zh320
-Date:       2023/07/29
+ -Url:        https://arxiv.org/abs/2101.06085
+ -github: Zh320- Real-time Semantic Segmentation in PyTorch- https://github.com/zh320/realtime-semantic-segmentation-pyt
+ -Date:       2023/07/29
 """
 
 import torch
