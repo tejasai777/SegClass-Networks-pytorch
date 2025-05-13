@@ -1,15 +1,14 @@
-# Byte-compiled / optimized
 __pycache__/
 *.py[cod]
 *$py.class
-
-# Virtual envs
 .venv/
 env/
 
 # Data & outputs
 data/
+data-pcb/
 # outputs/
+
 # Model checkpoints
 *.pth
 *.safetensors
