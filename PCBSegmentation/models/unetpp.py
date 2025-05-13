@@ -1,13 +1,3 @@
-'''
-Code Credits:
-
-- 1. Zhou et al., 2018
-   - Nested U-Net: A Fully Convolutional Neural Network for Medical Image Segmentation
-   - Source: https://arxiv.org/abs/1807.10165
-   - GitHub Repository: https://github.com/4uiiurz1/pytorch-nested-unet/tree/master
-
-'''
-
 import torch
 from torch import nn
 

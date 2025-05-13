@@ -9,11 +9,8 @@ Code Credits:
 2. LeeJunHyun
    - Adapted binary segmentation model AttUnet architecture to multiclass segmentation.
    - Source: https://github.com/LeeJunHyun/Image_Segmentation/blob/master/network.py
-
-3. Arbash et al., 2024
-   - PCB-Vision: A Multiscene RGB-Hyperspectral Benchmark Dataset of Printed Circuit Boards
-   - Source: https://doi.org/10.14278/rodare.270
 """
+
 import torch
 import torch.nn as nn
 import torch.nn.functional as F

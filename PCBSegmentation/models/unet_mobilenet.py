@@ -1,17 +1,3 @@
-'''
-Code Credits:
-
- - 1. Milesial
-   - PyTorch UNet implementation for image segmentation
-   - GitHub Repository: https://github.com/milesial/Pytorch-UNet
-
- - 2. YZY-stack
-   - UNet-MobileNet model implementation in PyTorch
-   - GitHub Repository: https://github.com/YZY-stack/UNet-MobileNet-Pytorch/t
-
-
-'''
-
 import time
 
 import torch

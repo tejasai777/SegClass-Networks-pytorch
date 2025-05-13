@@ -69,7 +69,21 @@ def eval_fn(loader, model, criterion, device):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--model', type=str, required=True,
-                        choices=['unet3plus','unetpp','unet_vgg16','attunet','unet_mobilenet'])
+                            choices=[
+            'unet3plus',
+            'unetpp',
+            'unet_vgg16',
+            'attunet',
+            'unet_mobilenet',
+            'deeplabv3plus_resnet34',
+            'deeplabv3plus_mit_b0',
+            'unet',
+            'resunet',
+            'bisenetmulticlass',
+            'stdc',
+            'ddrnet',
+            'litehrnet'
+        ])
     parser.add_argument('--data-dir', type=str, default='data')
     parser.add_argument('--output-dir', type=str, default='outputs')
     parser.add_argument('--img-size', type=int, default=640)
@@ -93,9 +107,13 @@ def main():
                               batch_size=1, shuffle=False, num_workers=2)
 
     model = build_seg_model(args.model, img_ch=3, num_classes=4).to(device)
-    ce = nn.CrossEntropyLoss()
+
+    CLASS_WEIGHTS = torch.tensor([0.1, 0.8, 0.85, 0.9], dtype=torch.float32).to(device)
+
+    ce = nn.CrossEntropyLoss(weight=CLASS_WEIGHTS)
     dice_loss = DiceLoss(mode='multiclass')
     criterion = lambda p, t: 0.5 * ce(p, t) + 0.5 * dice_loss(p, t)
+
     optimizer = optim.Adam(model.parameters(), lr=args.lr)
 
     best_val = float('inf')

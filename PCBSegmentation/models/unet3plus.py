@@ -1,13 +1,3 @@
-"""
-Code Credits:
-
-1. Huang et al., 2020
-   - UNet 3+: A Full-Scale Connected UNet for Medical Image Segmentation
-   - Source: https://arxiv.org/abs/2004.08790
-   - GitHub Repository: https://github.com/russel0719/UNet-3-Plus-Pytorch
-"""
-
-
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
