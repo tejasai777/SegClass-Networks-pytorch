@@ -8,7 +8,7 @@
 | **PCBClassNet**   | ![PCBClassNet](PCBClassification/outputs/samples/PCBClassNet.png)     |
 | **ConvNeXt Tiny** | ![ConvNeXt Tiny](PCBClassification/outputs/samples/convnext_tiny.png) |
 | **MobileNetV3**   | ![MobileNetV3](PCBClassification/outputs/samples/MobileNetv3.png)     |
-| **EfficientNet**  | ![EfficientNet](PCBClassification/outputs/samples/efficientnet.png)   |
+| **EfficientNetV2**  | ![EfficientNet](PCBClassification/outputs/samples/efficientnet.png)   |
 
 
 # PCB-Component-Segmentation-Networks-PyTorch
