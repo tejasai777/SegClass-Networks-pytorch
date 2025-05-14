@@ -23,3 +23,12 @@
 | **MobileNetV3**   | ![MobileNetV3](PCBClassification/outputs/samples/MobileNetv3.png)     |
 | **EfficientNetV2**  | ![EfficientNet](PCBClassification/outputs/samples/efficientnet.png)   |
 
+
+## References
+
+- [timm: PyTorch Image Models](https://github.com/huggingface/pytorch-image-models)  
+- [Deep Learning Collection](https://github.com/maciejbalawejder/Deep-Learning-Collection)  
+- [Realtime Semantic Segmentation (PyTorch)](https://github.com/zh320/realtime-semantic-segmentation-pytorch/tree/main/models)  
+- [PCBVision](https://github.com/Elias-Arbash/PCBVision/tree/main)  
+- [PCBSegClassNet](https://github.com/CandleLabAI/PCBSegClassNet/tree/main)  
+
