@@ -2,11 +2,13 @@
 
 ## Sample Outputs
 
-### 1️⃣ UNet++ (PCBVision)
-![Sample 2](PCBSegmentation/PCBVISION-outputs/unetpp/samples/sample_2.png)
+### 1️⃣ Sample Segmentation results(PCBVision)
+![Segementation on PCB-vision dataset](PCBSegmentation/samples/SEG-out.png)
+![cont..](PCBSegmentation/samples/seg-out2.png)
 
-### 2️⃣ DeepLabV3+ (FICS-PCB-Dataset)
-![Sample 1](PCBSegmentation/FICS-PCB-dataset-outputs/deeplabv3plus_resnet34/samples/sample_1.png)
+### 2️⃣ Sample Segmentation results (FICS-PCB-Dataset)
+![Segementation on FICS-PCB dataset](PCBSegmentation/samples/segout3.png)
+![cont..](PCBSegmentation/samples/segout4.png)
 
 
 # PCB-Component-Classification-Networks-PyTorch
