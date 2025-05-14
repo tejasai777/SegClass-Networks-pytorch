@@ -3,11 +3,11 @@
 ## Sample Outputs
 
 ### 1️⃣ Sample Segmentation results(PCBVision)
-![Segementation on PCB-vision dataset](PCBSegmentation/samples/SEG-out.png)
+![Segementation on PCB-vision dataset](PCBSegmentation/samples/SEG-out.png) |
 ![cont..](PCBSegmentation/samples/seg-out2.png)
 
 ### 2️⃣ Sample Segmentation results (FICS-PCB-Dataset)
-![Segementation on FICS-PCB dataset](PCBSegmentation/samples/segout3.png)
+![Segementation on FICS-PCB dataset](PCBSegmentation/samples/segout3.png) |
 ![cont..](PCBSegmentation/samples/segout4.png)
 
 
