@@ -2,7 +2,7 @@
 
 ## Structure
 ```
-project_root_seg/
+project_root/
 ├── data/
 │   ├── train/
 │   │   ├── images/
@@ -15,6 +15,9 @@ project_root_seg/
 │   ├── attunet.py
 │   ├── unet_mobilenet.py
 │   ├── unet_vgg16.py
+|          .
+|          .
+|          .
 │   ├── unetpp.py
 │   └── unet3plus.py
 ├── augmentation.py
