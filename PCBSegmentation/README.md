@@ -37,6 +37,7 @@ project_root/
 2. Prepare your data under `data/train/images`, `data/train/masks`, `data/val/images`, `data/val/masks`.
 3. Run training:
    ```
+   example:
    python train.py --model unet3plus --data-dir data --output-dir outputs
    ```
 4. Find best model, samples, metrics, and plots under `outputs/{model}`.
